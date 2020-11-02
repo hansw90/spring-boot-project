@@ -8,6 +8,9 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
+
+        TableStatus ts = new TableStatus();
+
 		System.out.println("asdfasdf");
 	}
 
