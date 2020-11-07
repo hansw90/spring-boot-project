@@ -34,7 +34,7 @@ public class LcmgrTestScheduler {
                 withSchedule(CronScheduleBuilder.cronSchedule("45 * * * * ?")).build();
 
         Trigger trigger3 = TriggerBuilder.newTrigger().withIdentity(TriggerKey.triggerKey("myTrigger", "myTriggerGroup"))
-                .withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInHours(1).repeatForever())
+                .withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(10).repeatForever())
                 .build();
 
 

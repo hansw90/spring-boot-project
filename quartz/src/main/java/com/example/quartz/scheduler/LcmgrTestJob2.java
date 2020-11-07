@@ -1,9 +1,11 @@
 package com.example.quartz.scheduler;
 
+import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
+@DisallowConcurrentExecution
 public class LcmgrTestJob2 implements Job {
 
     @Override
@@ -18,11 +20,12 @@ public class LcmgrTestJob2 implements Job {
         while (true){
             try {
                 Thread.sleep(1000); //1초 대기
+                i++;
                 System.out.println("LcmgrTestJob2");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }finally{
-                if (i >= 50) break;
+                if (i >= 20) break;
             }
 
         }
