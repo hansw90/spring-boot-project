@@ -10,7 +10,7 @@ public class MapProject {
     public static void main(String[] args) {
 
 
-        HashMap<EmployeePK, EmployeeVO>  hashpk = new HashMap<>();
+        HashMap<EmployeePK, EmployeeVO> hashpk = new HashMap<>();
 
         EmployeePK employeePK1 = new EmployeePK(1,101);
         EmployeeVO employeeVO1 = new EmployeeVO(1,101, "HSW", "CEO");
@@ -25,7 +25,7 @@ public class MapProject {
         hashpk.put(employeePK3,employeeVO3);
 
         EmployeePK employeePK4 = new EmployeePK(1,101);
-        EmployeeVO employeeVO4 = new EmployeeVO(1,301, "HSY", "CEO");
+        EmployeeVO employeeVO4 = new EmployeeVO(1,101, "철수", "개발자");
         hashpk.put(employeePK4,employeeVO4);
 
 
@@ -45,7 +45,21 @@ public class MapProject {
         * */
 
 
+        HashMap<EmployeePK, EmployeeVO> hashpk2 = new HashMap<>();
 
+        // 여기서 바뀐건 CEO HSW가 빠지고 철수가 들어온것이다. 이걸 어떻게 확인할 수 있을까?
+
+        hashpk2.put(employeePK4,employeeVO1);
+        hashpk2.put(employeePK2,employeeVO2);
+        hashpk2.put(employeePK3,employeeVO3);
+
+        for (EmployeePK employeePK : hashpk2.keySet()){
+            if(hashpk.containsKey(employeePK)){
+                if(hashpk2.get(employeePK).equals(hashpk.get(employeePK))){
+                    System.out.println(employeePK);
+                }
+            }
+        }
 
 
     }
